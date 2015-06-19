@@ -2,7 +2,11 @@
 //This is a PHP webhook page for uptime robot to try and restart/turn on
 //your Cloud at Cost server in the event the server crashes.
 //https://dns.or.ip/uptimerobot.php?auth_key=CHANGETHIS&
+
 //For Security reason its always recommended to configure ssl
+
+//This is used with my Cloud at Cost PHP Wrapper that can be found at
+// https://github.com/daemonforge/CloudatCost-PHP-WRAPPER
 include(dirname(__FILE__) . '/cloudatcost.class.php');
 //DEFINE VARARABLES
 $auth_key= 'CHANGETHIS'; //For Security
@@ -14,7 +18,7 @@ $api_key=null;//set if you don't want to set in the get string
 $api_login=null; //set if you don't want to set in the get string
 
 
-
+//If API Key and Login are set in the GET header use that.
 if(isset($_GET['api_key'])&& isset($_GET['api_login'])){
 	$api_key= $_GET['api_key'];
 	$api_login= $_GET['api_login'];
