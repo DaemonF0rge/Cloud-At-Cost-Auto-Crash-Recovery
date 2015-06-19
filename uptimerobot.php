@@ -10,6 +10,10 @@
 include(dirname(__FILE__) . '/cloudatcost.class.php');
 //DEFINE VARARABLES
 $auth_key= 'CHANGETHIS'; //For Security
+
+//Configure the servers table here to get the Monitor ID click on the monitor on the
+//Uptime Robot Dashboard it should be in the address bar after #
+//The server id's can be found in the cloud at cost server pannel under the info.
 $servers= [
 	'MonitorID' => 'ServerID', 
 	'000000000' => '000000000' //
