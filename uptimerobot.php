@@ -31,7 +31,12 @@ if(isset($_GET['api_key'])&& isset($_GET['api_login'])){
 $server_id=null; //leave null
 //VAILDATE REQUEST
 if(isset($_GET['auth_key']) && $_GET['auth_key'] == $auth_key){
-	if(isset($_GET['req_type']) && isset($_GET['monitorID'])){
+	if(intval($_GET['alertType']) == 2)//If alert is up exit with success
+	{
+		echo 'success';
+		exit();
+	}
+	if(isset($_GET['monitorID'])){
 		$monitor_id=strval($_GET['monitorID']);
 		if(isset($servers[$monitor_id])){
 			$req_type= $_GET['req_type'];
